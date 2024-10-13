@@ -1,6 +1,3 @@
-// Load environment variables
-require('dotenv').config();
-
 const express = require('express');
 const mongoose = require('mongoose');
 const bodyParser = require('body-parser');
@@ -12,9 +9,8 @@ const app = express();
 app.use(bodyParser.json());
 app.use(cors());
 
-// MongoDB Atlas connection using environment variable
-const mongoURI = process.env.MONGODB_URI;
-mongoose.connect(mongoURI, {
+// MongoDB Atlas connection
+mongoose.connect('mongodb+srv://cc5032949:chetan8197@chetan.nqm2rri.mongodb.net/analyticsDB?retryWrites=true&w=majority', {
   useNewUrlParser: true,
   useUnifiedTopology: true,
 })
